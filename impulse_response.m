@@ -8,8 +8,9 @@ function [ h,t ] = impulse_response( x, y, fs )
 
 [X,f] = fdomain(x,fs);
 [Y,f] = fdomain(y,fs);
-H = X./Y;   % the calculated frequency response
+H = Y./X;   % the calculated frequency response, corrected on 9/23/18 by Josephine King
 [h,t] = tdomain(H,fs);
 
-end
+plot(t,h)
 
+end
